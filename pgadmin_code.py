@@ -238,9 +238,9 @@
 #
 # --alter table suppliers
 # --rename column muallif to aftor;
+#
 
-
-# vazifa1
+# # vazifa1
 #
 # --1-misol
 # --select category_id, product_name from products
@@ -252,5 +252,44 @@
 #
 # --4-misol
 # --select avg(unit_price) from products
+#
+#--5-misol
+# --select order_date from orders
+# --where to_char(order_date, 'YYYY-MM')='1997-07'
 
-
+# dml2
+# --select * from products where category_id=3  and unit_price=(select min(unit_price) from products where category_id=3)
+#
+# --select * from orders where shipped_date>'1996-12-31' and shipped_date<'1998-01-01'
+#
+#
+# --select * from categories
+# --insert into categories(category_id,category_name,description)
+# --values
+# --(9,'test_category','kkkkkkk')
+# --select * from categories
+#
+# --select * from categories where exists(select * from product where product_id=category.product_id);
+#
+# -- select * from categories where category_id between 2 and 6
+# -- and category_name like 'B%' and unit_price>10
+#
+# --select company_name, country from customers where country in('USA')
+#
+# -- select to_char(order_date, 'YYYY-MM'),count(*) from orders
+# -- where to_char(order_date,'YYYY')='1997' and shipped_date>required_date
+# -- group by to_char(order_date,'YYYY-MM')
+#
+# -- select to_char(order_date,'YYYY-MM-DD'), count(*) from orders
+# -- where to_char(order_date,'YYYY-MM')='1996-03'
+# -- group by to_char(order_date,'YYYY-MM-DD');
+#
+#
+# -- select to_char(order_date,'YYYY-MM-DD'), count(*) from orders
+# -- where to_char(order_date,'YYYY-MM')='1996-03'
+# -- group by to_char(order_date,'YYYY-MM-DD');
+# -- having count(*)>1
+#
+# -- select category_id, count(*) from products
+# -- group by category_id
+# -- having count(*)>10
