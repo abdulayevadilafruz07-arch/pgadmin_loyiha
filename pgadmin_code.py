@@ -1,3 +1,14 @@
+
+# -- from
+# -- where
+# -- group by
+# -- having
+# -- select
+# -- order by
+# -- limit
+#
+
+
 # --1misol(order by)
 # --select * from categories
 # --order by category_name desc
@@ -293,3 +304,45 @@
 # -- select category_id, count(*) from products
 # -- group by category_id
 # -- having count(*)>10
+
+
+#
+# -- from
+# -- where
+# -- group by
+# -- having
+# -- select
+# -- order by
+# -- limit
+#
+#
+#
+# -- select category_name, product_name from products p
+# -- inner join categories c on(p.category_id=c.category_id)
+#
+#
+# -- select order_id, company_name, order_date from orders p
+# -- inner join customers c on(p.customer_id=c.customer_id)
+# -- where to_char(order_date,'YYYY-MM')='1997-07'
+#
+# -- select category_name, count(product_id)
+# -- from products p
+# -- inner join categories c on(p.category_id=c.category_id)
+# -- group by category_name
+# #
+#  96yilda qilgan xaridlari(order_name) zakazlar soni
+#
+# -- select order_id, product_name, order_date, country count(product_id) from products p
+# -- inner join orders c on(p.order_id=c.order_id)
+# -- where to_char(order_date, 'YYYY-MM')='1997-08' and
+#
+# -- 97yil har bir oyida har bir hodimning zakazlari soni
+# -- vazifa
+# -- 1...1chi categordagi productlar 96yi har bir oyida mahsulotga qancga zakas tushgan (zakazlar soni) 10dan qimmat
+# -- 2.....3chi category dagi eng arzon mahsulot ga 97yi 7oyida yetkazib bergan supplierlar
+# -- 3.....98yilning marta oyidagi  zakazlarni sotib olgan mijozlar ga xizmat qilgan xodimlar
+# -- 4.....har bir categorydagi eng qimmat mahsulot 96yilda qanchadan sotilgan
+# -- 5......97yilda amerikalik customerga xizmat korsatgan amerikalik supplier aniqlansin
+# -- 6......5chi categrydagi mahsulotlarga 97yilda xizmat korsatgan xodimlar
+# --7........amerikalik har bir shahri 97yil har bit oyida qancgadan zakaz olgan
+
