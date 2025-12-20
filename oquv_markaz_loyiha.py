@@ -71,13 +71,3 @@
 # lesson_date varchar(30) not null,
 # status varchar(50)
 # );
-
-
-
-
-
-
-
-
-
-
