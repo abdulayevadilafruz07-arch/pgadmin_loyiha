@@ -93,3 +93,31 @@
 # -- group by p.product_id, p.product_name, p.unit_price, c.company_name, s.company_name
 # -- order by p.unit_price desc limit 10;
 
+#
+# --4m
+# -- select p.product_name,p.unit_price,c.company_name,count(od.quantity)
+# -- from order_details od
+# -- join products p on od.product_id=p.product_id
+# -- join orders o on od.order_id=o.order_id
+# -- join customers c on o.customer_id=c.customer_id
+# -- where p.unit_price<= all(select unit_price from products)
+# -- group by p.product_name,p.unit_price,c.company_name
+# -- having by(select count(od.quantity) from order_details)
+#
+# -- select p.product_name, to_char(o.order_date,'YYYY'),c.company_name,count(o.)
+#
+# -- 12m)...
+# -- select s.company_name, count(o.order_id) from suppliers s
+# -- inner join products p on s.supplier_id=p.supplier_id
+# -- inner join order_details od on p.product_id=od.product_id
+# -- inner join orders o on o.order_id=od.order_id
+# -- where s.city='London'
+# -- group by s.company_name
+# -- having (o.order_id)=(select count(o.order_id) from suppliers s
+# -- inner join products p on s.supplier_id=p.supplier_id
+# -- inner join order_details od on p.product_id=od.product_id
+# -- inner join orders o on o.order_id=od.order_id
+# -- where s.city='London'
+# -- group by s.company_name
+# -- order by count(o.order_id) desc limit 1)
+# -- order by count(o.order_id)
